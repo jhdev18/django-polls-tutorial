@@ -1,0 +1,11 @@
+{% if lista_ultimas_questoes %}
+<ul>
+    {% for question in lista_ultimas_questoes %}
+    <li>
+        <a href="{% url 'polls:detail' question.id%}">{{question.question_text}}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>não há polls</p>
+{% endif %}
